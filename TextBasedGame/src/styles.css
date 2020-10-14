@@ -1,0 +1,11 @@
+Pane {
+	-fx-background-color: #dd9369;
+}
+ 
+ .button {
+ 	-fx-background-color: white;
+ }
+ 
+ #sceneMessageTextBox {
+ 	-fx-display: block;
+ }
