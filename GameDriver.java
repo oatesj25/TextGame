@@ -23,7 +23,7 @@ public class GameDriver {
 			try {
 				printScene();
 				userChoice = UserChoice.valueOf(input.next());
-				getSceneInfo();
+				updateSceneInfo();
 			}
 			catch (InterruptedException e) {
 				System.out.println("Error with thread sleeping");
@@ -40,7 +40,7 @@ public class GameDriver {
 	
 	
 	// Navigates gameplay. No objects, just changing what gets run, updated, or printed based on current values of variables sceneNo and userChoice.
-	public static void getSceneInfo() {
+	public static void updateSceneInfo() {
 		switch (goToSceneNo) {
 			case 1: //Opening scene
 				switch (userChoice) {// different methods run depending on which was chosen in scene 1
