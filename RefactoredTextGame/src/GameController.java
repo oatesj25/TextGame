@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 
 public class GameController {
@@ -22,13 +23,19 @@ public class GameController {
 	@FXML
     private Text sceneTitleTextBox;
     @FXML
-    private Button choiceAButton;
+    private TextFlow choiceAButton;
     @FXML
-    private Button choiceBButton;
+    private TextFlow choiceBButton;
     @FXML
-    private Button choiceCButton;
+    private TextFlow choiceCButton;
     @FXML
     private Text sceneMessageTextBox;
+    @FXML
+    private Text buttonATextBox;
+    @FXML
+    private Text buttonBTextBox;
+    @FXML
+    private Text buttonCTextBox;
     @FXML
     private ImageView sceneImageView;
     
@@ -38,7 +45,7 @@ public class GameController {
     private void onMouseEnterButtonA() throws IOException {
     	  try {
     		choiceAButton.setCursor(Cursor.HAND);
-      		choiceAButton.setStyle("-fx-background-color: #964d1a;");	
+      		choiceAButton.setStyle("-fx-background-color: #964d1a; -fx-background-radius: 5;");	
     	  }
     	  catch (Exception e) {
       	      e.printStackTrace();
@@ -48,7 +55,7 @@ public class GameController {
     private void onMouseExitButtonA() throws IOException {
     	  try {
     		  choiceAButton.setCursor(Cursor.DEFAULT);
-      		  choiceAButton.setStyle("-fx-background-color: #b34a00;");
+      		  choiceAButton.setStyle("-fx-background-color: #b34a00; -fx-background-radius: 5;");
     	  }
     	  catch (Exception e) {
       	      e.printStackTrace();
@@ -58,7 +65,7 @@ public class GameController {
     private void onMouseEnterButtonB() throws IOException {
     	  try {
     		  choiceBButton.setCursor(Cursor.HAND);
-      		  choiceBButton.setStyle("-fx-background-color: #964d1a;");	
+      		  choiceBButton.setStyle("-fx-background-color: #964d1a; -fx-background-radius: 5;");	
     	  }
     	  catch (Exception e) {
       	      e.printStackTrace();
@@ -68,7 +75,7 @@ public class GameController {
     private void onMouseExitButtonB() throws IOException {
     	  try {
     		  choiceBButton.setCursor(Cursor.DEFAULT);
-      		  choiceBButton.setStyle("-fx-background-color: #b34a00;");
+      		  choiceBButton.setStyle("-fx-background-color: #b34a00; -fx-background-radius: 5;");
     	  }
     	  catch (Exception e) {
       	      e.printStackTrace();
@@ -78,7 +85,7 @@ public class GameController {
     private void onMouseEnterButtonC() throws IOException {
     	  try {
     		  choiceCButton.setCursor(Cursor.HAND);
-      		  choiceCButton.setStyle("-fx-background-color: #964d1a;");	
+      		  choiceCButton.setStyle("-fx-background-color: #964d1a; -fx-background-radius: 5;");	
     	  }
     	  catch (Exception e) {
       	      e.printStackTrace();
@@ -88,7 +95,7 @@ public class GameController {
     private void onMouseExitButtonC() throws IOException {
     	  try {
     		  choiceCButton.setCursor(Cursor.DEFAULT);
-      		  choiceCButton.setStyle("-fx-background-color: #b34a00;");
+      		  choiceCButton.setStyle("-fx-background-color: #b34a00; -fx-background-radius: 5;");
     	  }
     	  catch (Exception e) {
       	      e.printStackTrace();
@@ -97,7 +104,7 @@ public class GameController {
     
     //action methods for 3 main buttons
     @FXML
-    private void buttonAClick(ActionEvent event) throws IOException {
+    private void buttonAClick() throws IOException {
 		try {
 			currentSceneNo = gameScene[currentSceneNo].getAJumpsTo();
 			loadScene(currentSceneNo);
@@ -108,7 +115,7 @@ public class GameController {
        }
     }
     @FXML
-    private void buttonBClick(ActionEvent event) throws IOException {
+    private void buttonBClick() throws IOException {
 		try {
 			currentSceneNo = gameScene[currentSceneNo].getBJumpsTo();
 			loadScene(currentSceneNo);
@@ -119,7 +126,7 @@ public class GameController {
        }
     }
     @FXML
-    private void buttonCClick(ActionEvent event) throws IOException {
+    private void buttonCClick() throws IOException {
         try {
     		currentSceneNo = gameScene[currentSceneNo].getCJumpsTo();
     		loadScene(currentSceneNo);
@@ -138,9 +145,9 @@ public class GameController {
 	public void loadScene(int sceneNo) {
     	sceneTitleTextBox.setText(title);
     	sceneMessageTextBox.setText(gameScene[sceneNo].getMessage());
-		choiceAButton.setText(gameScene[sceneNo].getChoiceA());
-    	choiceBButton.setText(gameScene[sceneNo].getChoiceB());
-    	choiceCButton.setText(gameScene[sceneNo].getChoiceC());
+		buttonATextBox.setText(gameScene[sceneNo].getChoiceA());
+    	buttonBTextBox.setText(gameScene[sceneNo].getChoiceB());
+    	buttonCTextBox.setText(gameScene[sceneNo].getChoiceC());
 	}
 	
 	public void initialize() {//initializes GameScene objects. called by JavaFX/Application.
@@ -235,10 +242,8 @@ public class GameController {
 				"I don’t have a good feeling about this. [Throw the meat on the ground.]", 18, 24, 25);
 		
 		//TODO
-		/*
-		gameScene[17] = new GameScene("", "", "", "", "", );
-		gameScene[18] = new GameScene("", "", "", "", "", );
-		*/
+		gameScene[17] = new GameScene("", "", "", "", 1, 1, 1);
+		gameScene[18] = new GameScene("", "", "", "", 1, 1, 1);
 		
 		gameScene[19] = new GameScene("You make it nearly halfway back to where you started from before you collapse due to heat exhaustion, "
 				+ "dehydration, and likely other factors too. The hot sand feels comforting as you gradually lose your vision. "
