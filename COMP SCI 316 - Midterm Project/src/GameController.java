@@ -1,9 +1,7 @@
 
 import java.io.IOException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
-import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -137,10 +135,6 @@ public class GameController {
        }
     }
     
-	public void setGameDriver(GameDriver gameDriver) {//called by GameDriver class
-		this.gameDriver = gameDriver;
-	}
-    
 	//displays scene info to the GUI
 	public void loadScene(int sceneNo) {
     	sceneTitleTextBox.setText(title);
@@ -243,16 +237,16 @@ public class GameController {
 		
 		gameScene[17] = new GameScene("You inspect the food, looking into its small details and smelling its fresh, protein-packed scent simultaneously. "
 				+ "It looks and smells like a normal piece of meat. What should you do?", 
-				"It seems fine. It feels like it’s been so long since I had some food. [Take a bite.]", 
-				"I’m still sceptical. I’ll ask a villager about it. [Ask a villager.]", 
-				"I don’t have a good feeling about this. [Throw the meat on the ground.]", 16, 18, 25);
+				"It seems fine. It feels like itÂ’s been so long since I had some food. [Take a bite.]", 
+				"IÂ’m still sceptical. IÂ’ll ask a villager about it. [Ask a villager.]", 
+				"I donÂ’t have a good feeling about this. [Throw the meat on the ground.]", 16, 18, 25);
 		
 		gameScene[18] = new GameScene("Your eyes wander around the open village area in search of a villager." 
 				+ "You find someone leaning against a building to the left of you: an older man, bald, with lengthy facial hair, perhaps to compensate." 
 				+ "He is relatively expressionless with an indifferent demeanor. You approach him and ask: ", 
-				"“Excuse me, sir. What food is being served in this village feast?”", 
-				"“Is this food safe to eat?”", 
-				"Actually, never mind. I'm sure it's fine. I’m just going to eat it. [Take a bite.]", 26, 27, 16);
+				"Â“Excuse me, sir. What food is being served in this village feast?Â”", 
+				"Â“Is this food safe to eat?Â”", 
+				"Actually, never mind. I'm sure it's fine. IÂ’m just going to eat it. [Take a bite.]", 26, 27, 16);
 		
 		gameScene[19] = new GameScene("You make it nearly halfway back to where you started from before you collapse due to heat exhaustion, "
 				+ "dehydration, and likely other factors too. The hot sand feels comforting as you gradually lose your vision. "
