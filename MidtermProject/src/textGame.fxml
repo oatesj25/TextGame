@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane fx:id="mainWindowPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="250.0" minWidth="300.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #dd9369;" styleClass="pane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
+<Pane fx:id="mainWindowPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="250.0" minWidth="300.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #dd9369;" styleClass="pane" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameController">
    <children>
       <TextFlow layoutX="151.0" layoutY="25.0" prefHeight="50.0" prefWidth="498.0" textAlignment="CENTER">
          <children>
