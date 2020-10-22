@@ -1,9 +1,7 @@
 
 import java.io.IOException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
-import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -247,7 +245,7 @@ public class GameController {
 		
 		gameScene[17] = new GameScene("You inspect the food, looking into its small details and smelling its fresh, protein-packed scent simultaneously. "
 				+ "It looks and smells like a normal piece of meat. What should you do?", 
-				"It seems fine. It feels like it�s been so long since I had some food. [Take a bite.]", 
+				"It seems fine. It feels like it's been so long since I had some food. [Take a bite.]", 
 				"I'm still sceptical. I'll ask a villager about it. [Ask a villager.]", 
 				"I don�t have a good feeling about this. [Throw the meat on the ground.]", 16, 18, 25);
 		
