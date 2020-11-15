@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #dd9369;" styleClass="opening-scene-background-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="app.LoadGameMenuController">
+   <children>
+      <TableView fx:id="savedGamesTableView" layoutX="105.0" layoutY="96.0" prefHeight="408.0" prefWidth="590.0" stylesheets="@styles.css">
+        <columns>
+          <TableColumn fx:id="nameCol" editable="false" minWidth="80.0" prefWidth="150.0" text="Name" />
+          <TableColumn fx:id="dateTimeCol" editable="false" minWidth="80.0" prefWidth="265.0" text="Date/Time" />
+            <TableColumn fx:id="sceneNoCol" editable="false" minWidth="40.0" prefWidth="159.0" text="Scene Number" />
+        </columns>
+      </TableView>
+      <Button layoutX="331.0" layoutY="536.0" mnemonicParsing="false" text="Load Game" />
+      <Button fx:id="loadMenuBackButton" layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#loadMenuBackButtonClick" prefWidth="90.0" text="Menu">
+      </Button>
+   </children>
+</AnchorPane>
