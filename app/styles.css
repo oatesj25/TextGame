@@ -1,0 +1,77 @@
+.button {
+    -fx-background-color: #a76b36;
+    -fx-background-radius: 5;
+    -fx-text-fill: white;
+    -fx-opacity: .9;
+    -fx-border-width: 1;
+    -fx-border-color: black;
+    -fx-border-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #a16128;
+    -fx-background-radius: 5;
+    -fx-cursor: HAND; }
+
+.background-pane { /* not really needed, just adds some background color if there's a layout with nothing in the background */
+    -fx-background-color: #dd9369;
+}
+
+#main-gameplay-behind-text-rect { /* for the dark rectangle behind the main message text box in gameplay */
+    -fx-opacity: .5;
+    -fx-background-radius: 5;
+    -fx-background-color: black;
+}
+
+.opening-scene-background-pane{ /* loads image to the opening screen */
+    -fx-background-image: url("images/mainTitle.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 800 600;
+    -fx-background-position: center center;
+    -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0);
+}
+
+.root{ /* universal attributes applied to root nodes */
+    -fx-font-family: "PT Mono";
+    -fx-font-size: 18;
+    -fx-selection-bar: white;  /* sets color for selected rows in the load game screen */
+    -fx-selection-bar-non-focused: white;
+}
+
+#saveGameMenu {
+    -fx-background-color:  #d2d2d2;
+    -fx-opacity: 7;
+    -fx-border-color: black;
+    -fx-border-width: 1;
+}
+
+.table-view {
+    -fx-base: transparent;
+    -fx-background-color: #d2d2d2;
+    -fx-padding: 5;
+    -fx-opacity: .8;
+    -fx-background-radius: 5;
+}
+
+.table-view .column-header .label{
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-view .column-header-background {
+    -fx-background-radius: 5;
+    -fx-background-color: #a76b36;
+    -fx-border-width: 1;
+    -fx-border-color: black;
+    -fx-border-radius: 5;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-border-width: 0 0 10 0;
+    -fx-background-color: transparent;
+}
+
+#title-screen-big-text{
+    -fx-font-weight: BOLD;
+    -fx-font-size: 120;
+}
+

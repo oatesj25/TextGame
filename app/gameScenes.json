@@ -1,0 +1,273 @@
+[
+  null,
+  {
+    "message": "You wake suddenly. A gasp of dry air travels quickly into your mouth. There are awful, aching pains coursing through your body in several areas. You\u0027re clothed, but your feet are bare. As you look around to assess your surroundings, you realise you\u0027re in the middle of a barren, bone-dry wasteland. Alone. Where exactly are you?",
+    "choiceA": "Who\u0027s asking?",
+    "choiceB": "I have no idea.",
+    "choiceC": "I\u0027m in the middle of nowhere, with no people, shelter, or food and water in sight. ",
+    "AJumpsTo": 2,
+    "BJumpsTo": 3,
+    "CJumpsTo": 4,
+    "imagePath": "app/images/desert1.png"
+  },
+  {
+    "message": "Your conscience. Your inner self. Perhaps your saviour. Now, answer the question. Where are you?",
+    "choiceA": "I have no idea.",
+    "choiceB": "I\u0027m in the middle of nowhere, with no people, shelter, or food and water in sight.",
+    "choiceC": "I don\u0027t really care where I am. I\u0027m so tired... I just want to sleep. [Go to sleep.]",
+    "AJumpsTo": 3,
+    "BJumpsTo": 4,
+    "CJumpsTo": 5,
+    "imagePath": "app/images/desert1.png"
+  },
+  {
+    "message": "Well, you better figure it out. You\u0027re in terrible shape and need to do something soon. I\u0027ll ask again. Where are you?",
+    "choiceA": "Again, I have no idea.",
+    "choiceB": "I\u0027m in the middle of nowhere, with no people, shelter, or food and water in sight.",
+    "choiceC": "I don\u0027t really care where I am. I\u0027m so tired... I just want to sleep. [Go to sleep.]",
+    "AJumpsTo": 3,
+    "BJumpsTo": 4,
+    "CJumpsTo": 5,
+    "imagePath": "app/images/desert1.png"
+  },
+  {
+    "message": "Correct! Now, within this expanse of nothing-but-sand, how are you going to survive? You can\u0027t see anything within a five-mile radius. Perhaps you\u0027re not looking hard enough?",
+    "choiceA": "[Shield your eyes with your hand and look afar for people or shelter.]",
+    "choiceB": "[Dig into the sand around you to look for potential resources.]",
+    "choiceC": "I just have a feeling... [Start walking in the direction of the sun.]",
+    "AJumpsTo": 6,
+    "BJumpsTo": 7,
+    "CJumpsTo": 8,
+    "imagePath": "app/images/desert2.png"
+  },
+  {
+    "message": "After over an hour of shifting around in a coarse blanket of sand, you hazily drift off into the black.You hallucinate about your recent past for a few fleeting moments until all goes dark. Game over.",
+    "choiceA": "(Start new game?)",
+    "choiceB": "(Load previous save?)",
+    "choiceC": "(Quit?)",
+    "AJumpsTo": 1,
+    "BJumpsTo": 99,
+    "CJumpsTo": 100,
+    "imagePath": "app/images/darkness1.png"
+  },
+  {
+    "message": "You squint and notice a few palm trees and a small hut in the distance. You start to approach and as you do, you begin to devastatingly realise that it\u0027s simply a mirage, fading away more and more after each step you take. What are you going to do now?",
+    "choiceA": "[Go back to where you came from and decide your next move upon arrival.]",
+    "choiceB": "I just have a feeling... [Start walking in the direction of the sun.]",
+    "choiceC": "I can\u0027t believe this... I give up. I\u0027m going to sleep. [Go to sleep.]",
+    "AJumpsTo": 19,
+    "BJumpsTo": 8,
+    "CJumpsTo": 5,
+    "imagePath": "app/images/palmTrees.png"
+  },
+  {
+    "message": "You dig and dig and dig until the skin on your hands is burning from the scorching sand. You nearly give up, but your hand catches something by accident. It\u0027s a pair of sandals! Well... sort of. There are two mismatched sandals. You assume one of them is yours, but who the other belongs to is a mystery you\u0027ll have to solve. After acquiring footwear, what will you do next?",
+    "choiceA": "Now I can head out without burning my feet! [Put on the sandals and start walking in the direction of the sun.]",
+    "choiceB": "No, wait... I think it\u0027s a better idea to go this way. [Put on the sandals and start walking in the direction opposite the sun.]",
+    "choiceC": "I know there\u0027s more. There has to be. [Keep digging.]",
+    "AJumpsTo": 8,
+    "BJumpsTo": 9,
+    "CJumpsTo": 10,
+    "imagePath": "app/images/sandals.png"
+  },
+  {
+    "message": "You\u0027ve been walking for ages; so long that the sun is setting. You happen upon a small village. Wanna know the most exciting part?",
+    "choiceA": "Yes!",
+    "choiceB": "Uh... yeah, I guess.",
+    "choiceC": "No, I don\u0027t.",
+    "AJumpsTo": 11,
+    "BJumpsTo": 11,
+    "CJumpsTo": 12,
+    "imagePath": "app/images/darkness2.png"
+  },
+  {
+    "message": "For a while, nothing comes into sight. You become weary, searching for a sign of something, anything. But eventually, you come across a traveller on the back of a camel. They carry food, water, and other supplies. What do you do?",
+    "choiceA": "[Approach them cautiously but kindly.]",
+    "choiceB": "[Attempt to ambush them and steal their camel and supplies.]",
+    "choiceC": "They may be a threat to someone in my condition. [Avoid them.]",
+    "AJumpsTo": 13,
+    "BJumpsTo": 14,
+    "CJumpsTo": 15,
+    "imagePath": "app/images/camel2.png"
+  },
+  {
+    "message": "There\u0027s nothing. Now what?",
+    "choiceA": "Well, now I can head out without burning my feet! [Put on the sandals and start walking in the direction of the sun.]",
+    "choiceB": "No, wait... I think it\u0027s a better idea to go this way. [Put on the sandals and start walking in the direction opposite the sun.]",
+    "choiceC": "Is there really nothing? Nothing at all?,",
+    "AJumpsTo": 8,
+    "BJumpsTo": 9,
+    "CJumpsTo": 10,
+    "imagePath": "app/images/desert2.png"
+  },
+  {
+    "message": "They\u0027re having a feast! The whole village! You know what that means, right? You finally get to eat!",
+    "choiceA": "I don\u0027t care what there is, I\u0027m eating it. [Dig in!]",
+    "choiceB": "Maybe I should inspect the food first. [Inspect the food.]",
+    "choiceC": "I\u0027ll ask one of the villagers about this feast first. [Ask a villager.]",
+    "AJumpsTo": 16,
+    "BJumpsTo": 17,
+    "CJumpsTo": 18,
+    "imagePath": ""
+  },
+  {
+    "message": "Yes, you do. They\u0027re having a feast! The whole village! You know what that means, right? You finally get to eat!",
+    "choiceA": "I don\u0027t care what there is, I\u0027m eating it. [Dig in!]",
+    "choiceB": "Maybe I should inspect the food first. [Inspect the food.]",
+    "choiceC": "I\u0027ll ask one of the villagers about this feast first. [Ask a villager.]",
+    "AJumpsTo": 16,
+    "BJumpsTo": 17,
+    "CJumpsTo": 18,
+    "imagePath": ""
+  },
+  {
+    "message": "The traveller spots you approaching them. They slow to a halt to ask you what you need. They seem inconvenienced, but clearly not enough to just ignore you.",
+    "choiceA": "Could I have some water, please? I don\u0027t know how long it\u0027s been since I\u0027ve had any.",
+    "choiceB": "Do you think you could give me a ride to the nearest city? Or at least point me in the right direction? I have no idea where I am right now.",
+    "choiceC": "I don\u0027t know if I trust them... [Go back to where you came from and decide your next move upon arrival.]",
+    "AJumpsTo": 20,
+    "BJumpsTo": 21,
+    "CJumpsTo": 19,
+    "imagePath": ""
+  },
+  {
+    "message": "The traveller spots you planning to attack. Their camel quickly starts running, moving a lot faster than you could. They\u0027re gone in a short span of time. Nice going, genius. Now what?",
+    "choiceA": "[Go back to where you came from and decide your next move upon arrival.]",
+    "choiceB": "I\u0027m going to catch them! [Chase after them.]",
+    "choiceC": "[Keep walking in the direction you were headed.]",
+    "AJumpsTo": 19,
+    "BJumpsTo": 22,
+    "CJumpsTo": 23,
+    "imagePath": ""
+  },
+  {
+    "message": "The traveller doesn\u0027t spot you. You have managed to successfully avoid them. But... now what? They may have been your only chance of survival.",
+    "choiceA": "Go back to where you came from and decide your next move upon arrival.]",
+    "choiceB": "I\u0027ve changed my mind; I\u0027m going to catch them! [Chase after them.]",
+    "choiceC": "[Keep walking in the direction you were headed.]",
+    "AJumpsTo": 19,
+    "BJumpsTo": 22,
+    "CJumpsTo": 23,
+    "imagePath": ""
+  },
+  {
+    "message": "You bite into an unfamiliar-tasting chunk of meat. What is this? It\u0027s not bad, but... it\u0027s unlike anything you\u0027ve ever had before. You should probably ask someone about this, right?",
+    "choiceA": "Yeah, probably... [Ask a villager.]",
+    "choiceB": "My hunger knows no bounds. [Eat the rest of the meat.]",
+    "choiceC": "I don\u0027t have a good feeling about this. [Throw the meat on the ground.]",
+    "AJumpsTo": 18,
+    "BJumpsTo": 24,
+    "CJumpsTo": 25,
+    "imagePath": ""
+  },
+  {
+    "message": "You inspect the food, looking into its small details and smelling its fresh, protein-packed scent simultaneously. It looks and smells like a normal piece of meat. What should you do?",
+    "choiceA": "It seems fine. It feels like it\u0027s been so long since I had some food. [Take a bite.]",
+    "choiceB": "I\u0027m still sceptical. I\u0027ll ask a villager about it. [Ask a villager.]",
+    "choiceC": "I don\u0027t have a good feeling about this. [Throw the meat on the ground.]",
+    "AJumpsTo": 16,
+    "BJumpsTo": 18,
+    "CJumpsTo": 25,
+    "imagePath": ""
+  },
+  {
+    "message": "Your eyes wander around the open village area in search of a villager.You find someone leaning against a building to the left of you: an older man, bald, with lengthy facial hair, perhaps to compensate.He is relatively expressionless with an indifferent demeanor. You approach him and ask: ",
+    "choiceA": "Excuse me, sir. What food is being served in this village feast?",
+    "choiceB": "Is this food safe to eat?",
+    "choiceC": "Actually, never mind. I\u0027m sure it\u0027s fine. Im just going to eat it. [Take a bite.]",
+    "AJumpsTo": 26,
+    "BJumpsTo": 27,
+    "CJumpsTo": 16,
+    "imagePath": ""
+  },
+  {
+    "message": "You make it nearly halfway back to where you started from before you collapse due to heat exhaustion, dehydration, and likely other factors too. The hot sand feels comforting as you gradually lose your vision. After some time, all goes dark. Game over.",
+    "choiceA": "(Start new game?)",
+    "choiceB": "...",
+    "choiceC": "...",
+    "AJumpsTo": 1,
+    "BJumpsTo": 1,
+    "CJumpsTo": 1,
+    "imagePath": ""
+  },
+  {
+    "message": "Scene currently under construction",
+    "choiceA": "Go to menu",
+    "choiceB": "",
+    "choiceC": "",
+    "AJumpsTo": 1,
+    "BJumpsTo": 20,
+    "CJumpsTo": 20,
+    "imagePath": ""
+  },
+  {
+    "message": "Scene currently under construction",
+    "choiceA": "Go to menu",
+    "choiceB": "",
+    "choiceC": "",
+    "AJumpsTo": 1,
+    "BJumpsTo": 21,
+    "CJumpsTo": 21,
+    "imagePath": ""
+  },
+  {
+    "message": "Scene currently under construction",
+    "choiceA": "Go to menu",
+    "choiceB": "",
+    "choiceC": "",
+    "AJumpsTo": 1,
+    "BJumpsTo": 22,
+    "CJumpsTo": 22,
+    "imagePath": ""
+  },
+  {
+    "message": "Scene currently under construction",
+    "choiceA": "Go to menu",
+    "choiceB": "",
+    "choiceC": "",
+    "AJumpsTo": 1,
+    "BJumpsTo": 23,
+    "CJumpsTo": 23,
+    "imagePath": ""
+  },
+  {
+    "message": "Scene currently under construction",
+    "choiceA": "Go to menu",
+    "choiceB": "",
+    "choiceC": "",
+    "AJumpsTo": 1,
+    "BJumpsTo": 24,
+    "CJumpsTo": 24,
+    "imagePath": ""
+  },
+  {
+    "message": "Scene currently under construction",
+    "choiceA": "Go to menu",
+    "choiceB": "",
+    "choiceC": "",
+    "AJumpsTo": 1,
+    "BJumpsTo": 25,
+    "CJumpsTo": 25,
+    "imagePath": ""
+  },
+  {
+    "message": "Scene currently under construction",
+    "choiceA": "Go to menu",
+    "choiceB": "",
+    "choiceC": "",
+    "AJumpsTo": 1,
+    "BJumpsTo": 26,
+    "CJumpsTo": 26,
+    "imagePath": ""
+  },
+  {
+    "message": "Scene currently under construction",
+    "choiceA": "Go to menu",
+    "choiceB": "",
+    "choiceC": "",
+    "AJumpsTo": 1,
+    "BJumpsTo": 27,
+    "CJumpsTo": 27,
+    "imagePath": ""
+  }
+]
