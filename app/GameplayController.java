@@ -25,11 +25,9 @@ import javafx.scene.text.TextFlow;
 
 public class GameplayController {
 
-    GameScene[] gameScene = new GameScene[50];//array of GameScenes. We access each scene by its index. Make array longer if needed.
+    private GameScene[] gameScene = new GameScene[50];//array of GameScenes. We access each scene by its index. Make array longer if needed.
     private int currentSceneNo = 1;//to keep track of where we are in the game
-    private String defaultImagePath = "app/images/desert1.png";
-    private String currentSceneImagePath;
-    ObservableList<ObservableSavedGame> observableSavedGamesList;
+    private ObservableList<ObservableSavedGame> observableSavedGamesList;//TableView requires ObservableList
     private SaveGameReaderWriter saveGameReaderWriter = new SaveGameReaderWriter();
 
     //instantiating FXML objects
@@ -104,55 +102,42 @@ public class GameplayController {
     }
     @FXML
     private void saveGameMenuButtonClick() throws IOException {
-        updateObservableSavedGames();
+        updateSavedGamesTableView();
         showSaveGameMenu();
     }
-
     @FXML
-    void createNewSavedGame(ActionEvent event) throws IOException {
-        if (playerNameTextField.getText() != null) {
-            saveGameReaderWriter.saveNewGame(new SavedGame(playerNameTextField.getText(), currentSceneNo));
-            hideSaveGameMenu();
-        } else {playerNameTextField.setText("Please enter a player name.");}
+    private void onNewSavedGameButtonClick(ActionEvent event) throws IOException {
+        createNewSavedGame();
     }
     @FXML
-    void overwritePreviousSavedGame(ActionEvent event) {
-        if (savedGamesTableView.getSelectionModel().isEmpty()) {
-            overwritePreviousGameButton.setText("Please select a game to overwrite");
-        } else {
-            ObservableSavedGame userSelection = savedGamesTableView.getSelectionModel().getSelectedItem();
-            SavedGame currentUserGame = new SavedGame(userSelection.getObservableName(), currentSceneNo, userSelection.getObservableDateSaved());
-            int indexToOverwrite = savedGamesTableView.getSelectionModel().getFocusedIndex();
-            saveGameReaderWriter.overwriteSavedGame(currentUserGame, indexToOverwrite);
-            hideSaveGameMenu();
-            overwritePreviousGameButton.setText("Overwrite previous save point");
-        }
+    private void overwritePreviousSavedGameButtonClick(ActionEvent event) {
+        overwritePreviousSavedGame();
     }
     @FXML
-    void exitSaveGameMenu(MouseEvent event) {
+    private void exitSaveGameMenu(MouseEvent event) {
         hideSaveGameMenu();
     }
 
-    public void initialize() throws IOException {
-        // Called by JavaFX.
+    public void initialize() throws IOException {// Called by JavaFX
         loadGameSceneData(); // loads scene data from gameScenes.json
-        //load info on which scene to load
-        LoadGameReaderWriter loadGameReaderWriter = new LoadGameReaderWriter();
-        SavedGame currentGame = loadGameReaderWriter.loadGameSession();
-        currentSceneNo = currentGame.getSceneNo();
-        loadScene(currentSceneNo);
-
-        updateObservableSavedGames(); //makes saved game data observable for the TableView to display them
+        currentSceneNo = getProperSceneNo();
+        loadScene(currentSceneNo); //loads information on which scene to start at
+        updateSavedGamesTableView(); //makes saved game data observable for the TableView to display them
     }
 
-    public void loadGameSceneData() throws IOException {
+    private static int getProperSceneNo() throws IOException {
+        LoadGameReaderWriter loadGameReaderWriter = new LoadGameReaderWriter();
+        return loadGameReaderWriter.loadGameSession().getSceneNo();
+    }
+
+    private void loadGameSceneData() throws IOException {
         //loads GameScene objects from json file
         String json = new String(Files.readAllBytes(Paths.get("src/app/gameScenes.json")), StandardCharsets.UTF_8);
         gameScene = new Gson().fromJson(json, GameScene[].class);
         System.out.println("GameScenes loaded.");
     }
 
-    public void loadScene(int sceneNo) {
+    private void loadScene(int sceneNo) {
         //displays current GameScene info to the GUI
         sceneMessageTextBox.setText(gameScene[sceneNo].getMessage());
         buttonATextBox.setText(gameScene[sceneNo].getChoiceA());
@@ -160,11 +145,11 @@ public class GameplayController {
         buttonCTextBox.setText(gameScene[sceneNo].getChoiceC());
 
         //display proper background image
-        if (! gameScene[sceneNo].getImagePath().isEmpty()) { //getting background image path if scene has one
-            currentSceneImagePath = gameScene[currentSceneNo].getImagePath();
-        } else {
-           currentSceneImagePath = defaultImagePath;
-        } System.out.println("Loading image: " + currentSceneImagePath);
+        String currentSceneImagePath = gameScene[currentSceneNo].getImagePath(); //getting background image path if scene has one
+        if (currentSceneImagePath.isEmpty()) {
+            currentSceneImagePath = "app/images/desert1.png";//default image path
+        }
+        System.out.println("Loading image: " + currentSceneImagePath);
         BackgroundSize backgroundSize = new BackgroundSize(900, 700,
                 true, true, true, true);
         BackgroundImage image = new BackgroundImage(new Image(currentSceneImagePath),  //setting background image
@@ -175,7 +160,7 @@ public class GameplayController {
         root.setBackground(new Background(image));
     }
 
-    public void updateObservableSavedGames() throws IOException {
+    private void updateSavedGamesTableView() throws IOException {
         //saved games must be put in an ObservableList for the TableView to display them
         observableSavedGamesList = FXCollections.observableArrayList();
         for ( SavedGame sg: saveGameReaderWriter.loadSavedGamesList()) {
@@ -187,6 +172,25 @@ public class GameplayController {
         savedGamesTableView.setItems(observableSavedGamesList);//loads data to TableView
     }
 
+    private void overwritePreviousSavedGame() {
+        if (savedGamesTableView.getSelectionModel().isEmpty()) {
+            overwritePreviousGameButton.setText("Please select a game to overwrite");
+        } else {
+            ObservableSavedGame userSelection = savedGamesTableView.getSelectionModel().getSelectedItem();
+            SavedGame currentUserGame = new SavedGame(userSelection.getObservableName(), currentSceneNo, userSelection.getObservableDateSaved());
+            int indexToOverwrite = savedGamesTableView.getSelectionModel().getFocusedIndex();
+            saveGameReaderWriter.overwriteSavedGame(currentUserGame, indexToOverwrite);
+            hideSaveGameMenu();
+            overwritePreviousGameButton.setText("Overwrite previous save point");
+        }
+    }
+
+    private void createNewSavedGame() {
+        if (playerNameTextField.getText() != null) {//user must type in name to save game
+            saveGameReaderWriter.saveNewGame(new SavedGame(playerNameTextField.getText(), currentSceneNo));
+            hideSaveGameMenu();
+        } else {playerNameTextField.setText("Please enter a player name.");}
+    }
 
     private void showSaveGameMenu() {
         saveGameMenuAnchorPane.setVisible(true);

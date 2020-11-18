@@ -18,7 +18,7 @@
    <children>
       <AnchorPane id="saveGameMenu" fx:id="saveGameMenuAnchorPane" layoutX="306.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="494.0" stylesheets="@styles.css" visible="false">
          <children>
-            <Button fx:id="overwritePreviousGameButton" layoutX="20.0" layoutY="286.0" mnemonicParsing="false" onAction="#overwritePreviousSavedGame" prefHeight="35.0" prefWidth="452.0" text="Overwrite Previous Save Point" />
+            <Button fx:id="overwritePreviousGameButton" layoutX="20.0" layoutY="286.0" mnemonicParsing="false" onAction="#overwritePreviousSavedGameButtonClick" prefHeight="35.0" prefWidth="452.0" text="Overwrite Previous Save Point" />
             <TableView fx:id="savedGamesTableView" layoutX="13.0" layoutY="13.0" prefHeight="258.0" prefWidth="461.0">
               <columns>
                 <TableColumn fx:id="nameCol" editable="false" prefWidth="119.0" text="Name" />
@@ -28,7 +28,7 @@
             </TableView>
             <TextField fx:id="playerNameTextField" layoutX="76.0" layoutY="354.0" prefHeight="33.0" prefWidth="394.0" />
             <Label layoutX="19.0" layoutY="360.0" text="Name" />
-            <Button fx:id="newSavedGameButton" layoutX="19.0" layoutY="402.0" mnemonicParsing="false" onAction="#createNewSavedGame" prefHeight="35.0" prefWidth="450.0" text="Create New Saved Game" />
+            <Button fx:id="newSavedGameButton" layoutX="19.0" layoutY="402.0" mnemonicParsing="false" onAction="#onNewSavedGameButtonClick" prefHeight="35.0" prefWidth="450.0" text="Create New Saved Game" />
             <Line endX="391.0" layoutX="102.0" layoutY="341.0" startX="-101.0" />
             <Text fx:id="saveGameMenuExitButton" layoutX="1.0" layoutY="18.0" onMouseClicked="#exitSaveGameMenu" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="button" text="x" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="1.0" />
          </children>

@@ -8,10 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
-import java.util.LongSummaryStatistics;
 
 public class TitleScreenController {
-    private FXMLLoader fxmlLoader;
 
     @FXML private Button newGameButton;
     @FXML private Button loadGameButton;

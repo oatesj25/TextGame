@@ -17,9 +17,8 @@ import java.io.IOException;
 public class LoadGameMenuController {
 
     private ObservableList<ObservableSavedGame> observableSavedGamesList;
-    SaveGameReaderWriter saveGameReader = new SaveGameReaderWriter();
-    LoadGameReaderWriter loadGameReaderWriter = new LoadGameReaderWriter();
-    
+    private SaveGameReaderWriter saveGameReader = new SaveGameReaderWriter();
+    private LoadGameReaderWriter loadGameReaderWriter = new LoadGameReaderWriter();
 
     @FXML
     private AnchorPane root;
@@ -36,18 +35,14 @@ public class LoadGameMenuController {
     }
 
     @FXML void loadMenuBackButtonClick(ActionEvent event) throws IOException {
-        Pane titleScreenParent = FXMLLoader.load(getClass().getResource("title_screen_layout.fxml"));
-        root.getChildren().setAll(titleScreenParent);
+        loadMenuLayout();
     }
     @FXML void loadGameButtonClick(ActionEvent event) throws IOException {
         if (savedGamesTableView.getSelectionModel().isEmpty()) {
             loadGameButton.setText("Please select a game to load");
         } else {
-            ObservableSavedGame userSelection = savedGamesTableView.getSelectionModel().getSelectedItem();
-            SavedGame currentUserGame = new SavedGame(userSelection.getObservableName(), userSelection.getObservableSceneNo(), userSelection.getObservableDateSaved());
-            loadGameReaderWriter.updateSessionToLoad(currentUserGame);
-            Parent parent = FXMLLoader.load(getClass().getResource("gameplay_layout.fxml"));
-            root.getChildren().setAll(parent);
+            loadUserSelectedGame();
+            loadGameplayLayout();
         }
     }
 
@@ -55,7 +50,23 @@ public class LoadGameMenuController {
         updateObservableSavedGames();
     }
 
-    public void updateObservableSavedGames() throws IOException {
+    private void loadUserSelectedGame() {
+        ObservableSavedGame userSelection = savedGamesTableView.getSelectionModel().getSelectedItem();
+        SavedGame currentUserGame = new SavedGame(userSelection.getObservableName(), userSelection.getObservableSceneNo(), userSelection.getObservableDateSaved());
+        loadGameReaderWriter.updateSessionToLoad(currentUserGame);
+    }
+
+    private void loadGameplayLayout() throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("gameplay_layout.fxml"));
+        root.getChildren().setAll(parent);
+    }
+
+    private void loadMenuLayout() throws IOException {
+        Pane titleScreenParent = FXMLLoader.load(getClass().getResource("title_screen_layout.fxml"));
+        root.getChildren().setAll(titleScreenParent);
+    }
+
+    private void updateObservableSavedGames() throws IOException {
         //saved games must be put in an ObservableList for the TableView to display them
         observableSavedGamesList = FXCollections.observableArrayList();
         for (SavedGame sg: saveGameReader.loadSavedGamesList()) {
