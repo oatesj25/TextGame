@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+
 import java.io.IOException;
 
 public class TitleScreenController {
@@ -27,8 +28,6 @@ public class TitleScreenController {
         lgrw.updateSessionToLoad(newGameInstance);
 
         //load GUI
-        Parent parent = FXMLLoader.load(getClass().getResource("gameplay_layout.fxml"));
-        root.getChildren().setAll(parent);
         loadLayout("gameplay_layout.fxml");
     }
     @FXML
