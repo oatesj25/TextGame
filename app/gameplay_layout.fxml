@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<Pane fx:id="root" prefHeight="600.0" prefWidth="800.0" styleClass="main-gameplay-background-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.GameplayController">
+<Pane fx:id="root" prefHeight="600.0" prefWidth="800.0" styleClass="main-gameplay-background-pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="app.GameplayController">
    <children>
       <AnchorPane id="saveGameMenu" fx:id="saveGameMenuAnchorPane" layoutX="306.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="494.0" stylesheets="@styles.css" visible="false">
          <children>

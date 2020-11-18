@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
+import java.util.LongSummaryStatistics;
 
 public class TitleScreenController {
     private FXMLLoader fxmlLoader;
@@ -18,12 +19,18 @@ public class TitleScreenController {
     @FXML private AnchorPane root;
     @FXML
     void onLoadGameButtonClick(ActionEvent event) throws IOException {
-        System.out.println("Load game button clicked");
         loadLayout("load_game_menu_layout.fxml");
     }
     @FXML
     void onNewGameButtonClick(ActionEvent event) throws IOException {
-        System.out.println("New game button clicked");
+        //Set gameSessionToLoad.json to a new game instance
+        SavedGame newGameInstance = new SavedGame("Player", 1, "today");
+        LoadGameReaderWriter lgrw = new LoadGameReaderWriter();
+        lgrw.updateSessionToLoad(newGameInstance);
+
+        //load GUI
+        Parent parent = FXMLLoader.load(getClass().getResource("gameplay_layout.fxml"));
+        root.getChildren().setAll(parent);
         loadLayout("gameplay_layout.fxml");
     }
     @FXML

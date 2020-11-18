@@ -1,15 +1,11 @@
 package app;
 
 import java.io.*;
-import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -33,51 +29,38 @@ public class GameplayController {
     private int currentSceneNo = 1;//to keep track of where we are in the game
     private String defaultImagePath = "app/images/desert1.png";
     private String currentSceneImagePath;
-    private List<SavedGame> savedGamesList = new ArrayList<SavedGame>();
     ObservableList<ObservableSavedGame> observableSavedGamesList;
+    private SaveGameReaderWriter saveGameReaderWriter = new SaveGameReaderWriter();
 
     //instantiating FXML objects
     //main screen components:
     @FXML
     private Pane root;
     @FXML
-    private Text sceneMessageTextBox;
+    private TextFlow choiceAButton, choiceBButton, choiceCButton;
     @FXML
-    private TextFlow choiceAButton;
+    private Text sceneMessageTextBox, buttonATextBox, buttonBTextBox, buttonCTextBox;
     @FXML
-    private Text buttonATextBox;
-    @FXML
-    private TextFlow choiceBButton;
-    @FXML
-    private Text buttonBTextBox;
-    @FXML
-    private TextFlow choiceCButton;
-    @FXML
-    private Text buttonCTextBox;
-    @FXML
-    private Button gameplayMenuButton;
-    @FXML
-    private Button saveGameMenuButton;
+    private Button gameplayMenuButton, saveGameMenuButton;
 
     // save game menu components:
     @FXML
     private AnchorPane saveGameMenuAnchorPane;
     @FXML
-    private Button overwritePreviousGameButton;
+    private Button overwritePreviousGameButton, newSavedGameButton;
     @FXML
     private TextField playerNameTextField;
-    @FXML
-    private Button newSavedGameButton;
     @FXML
     private Text saveGameMenuExitButton;
     @FXML
     private TableView<ObservableSavedGame> savedGamesTableView;
     @FXML
-    private TableColumn<SavedGame, String> nameCol;
+    private TableColumn<SavedGame, String> nameCol, dateTimeCol;
     @FXML
     private TableColumn<SavedGame, Integer> sceneNoCol;
-    @FXML
-    private TableColumn<SavedGame, String> dateTimeCol;
+
+    public GameplayController() throws IOException {
+    }
 
     //action methods for 3 main buttons
     @FXML
@@ -120,21 +103,30 @@ public class GameplayController {
         }
     }
     @FXML
-    private void saveGameMenuButtonClick() {
+    private void saveGameMenuButtonClick() throws IOException {
         updateObservableSavedGames();
         showSaveGameMenu();
     }
+
     @FXML
     void createNewSavedGame(ActionEvent event) throws IOException {
         if (playerNameTextField.getText() != null) {
-            savedGamesList.add(0, new SavedGame(playerNameTextField.getText(), currentSceneNo));
-            saveGameData(savedGamesList);
+            saveGameReaderWriter.saveNewGame(new SavedGame(playerNameTextField.getText(), currentSceneNo));
             hideSaveGameMenu();
         } else {playerNameTextField.setText("Please enter a player name.");}
     }
     @FXML
     void overwritePreviousSavedGame(ActionEvent event) {
-        // TODO
+        if (savedGamesTableView.getSelectionModel().isEmpty()) {
+            overwritePreviousGameButton.setText("Please select a game to overwrite");
+        } else {
+            ObservableSavedGame userSelection = savedGamesTableView.getSelectionModel().getSelectedItem();
+            SavedGame currentUserGame = new SavedGame(userSelection.getObservableName(), currentSceneNo, userSelection.getObservableDateSaved());
+            int indexToOverwrite = savedGamesTableView.getSelectionModel().getFocusedIndex();
+            saveGameReaderWriter.overwriteSavedGame(currentUserGame, indexToOverwrite);
+            hideSaveGameMenu();
+            overwritePreviousGameButton.setText("Overwrite previous save point");
+        }
     }
     @FXML
     void exitSaveGameMenu(MouseEvent event) {
@@ -144,8 +136,12 @@ public class GameplayController {
     public void initialize() throws IOException {
         // Called by JavaFX.
         loadGameSceneData(); // loads scene data from gameScenes.json
-        loadScene(currentSceneNo);//scene 1 is loaded upon initialization
-        loadSavedGames();// loads saved game data
+        //load info on which scene to load
+        LoadGameReaderWriter loadGameReaderWriter = new LoadGameReaderWriter();
+        SavedGame currentGame = loadGameReaderWriter.loadGameSession();
+        currentSceneNo = currentGame.getSceneNo();
+        loadScene(currentSceneNo);
+
         updateObservableSavedGames(); //makes saved game data observable for the TableView to display them
     }
 
@@ -179,17 +175,10 @@ public class GameplayController {
         root.setBackground(new Background(image));
     }
 
-    public void loadSavedGames() throws IOException {
-        //reading saved games from json file
-        Type typeToken = new TypeToken<ArrayList<SavedGame>>(){}.getType();
-        String json = new String(Files.readAllBytes(Paths.get("src/app/savedGames.json")), StandardCharsets.UTF_8);
-        savedGamesList = new Gson().fromJson(json, typeToken);
-    }
-
-    public void updateObservableSavedGames() {
+    public void updateObservableSavedGames() throws IOException {
         //saved games must be put in an ObservableList for the TableView to display them
         observableSavedGamesList = FXCollections.observableArrayList();
-        for ( SavedGame sg: savedGamesList) {
+        for ( SavedGame sg: saveGameReaderWriter.loadSavedGamesList()) {
             observableSavedGamesList.add(new ObservableSavedGame(sg));
         } //assigning name, scene, and date properties to appropriate columns
         nameCol.setCellValueFactory(new PropertyValueFactory<>("observableName"));
@@ -198,17 +187,6 @@ public class GameplayController {
         savedGamesTableView.setItems(observableSavedGamesList);//loads data to TableView
     }
 
-    private void saveGameData (List<SavedGame> savedGameList) {
-        //writing to json file. saves user progress.
-        Gson gson = new Gson();
-        String json = gson.toJson(savedGameList);
-        try(FileWriter fileWriter = new FileWriter("src/app/savedGames.json")) {
-            fileWriter.write(json);
-            fileWriter.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
     private void showSaveGameMenu() {
         saveGameMenuAnchorPane.setVisible(true);

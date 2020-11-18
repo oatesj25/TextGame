@@ -21,6 +21,14 @@ public class SavedGame {
         System.out.println("new SavedGame object created.");
     }
 
+    public SavedGame(String name, int sceneNo, String dateSaved) {
+        this.name = name;
+        this.sceneNo = sceneNo;
+        this.dateSaved = dateSaved;
+
+        System.out.println("new SavedGame object created.");
+    }
+
     public String getName() {
         return name;
     }
