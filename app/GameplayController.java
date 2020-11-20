@@ -4,7 +4,6 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
 import com.google.gson.Gson;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -22,10 +22,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import javafx.stage.Stage;
 
 public class GameplayController {
 
-    private GameScene[] gameScene = new GameScene[50];//array of GameScenes. We access each scene by its index. Make array longer if needed.
+    private GameScene[] gameScene = new GameScene[30];//array of GameScenes. We access each scene by its index. Make array longer if needed.
+    //TODO: consider refactoring to List?
     private int currentSceneNo = 1;//to keep track of where we are in the game
     private ObservableList<ObservableSavedGame> observableSavedGamesList;//TableView requires ObservableList
     private SaveGameReaderWriter saveGameReaderWriter = new SaveGameReaderWriter();
@@ -94,8 +96,10 @@ public class GameplayController {
     @FXML
     private void gameplayMenuButtonClick() throws IOException { //brings you back to the main menu
         try {
-            Parent titleScreenParent = FXMLLoader.load(getClass().getResource("title_screen_layout.fxml"));
-            root.getChildren().setAll(titleScreenParent);
+            Parent parent = FXMLLoader.load(getClass().getResource("resources/title_screen_layout.fxml"));
+            Stage primaryStage = (Stage) root.getScene().getWindow();
+            Scene scene = new Scene(parent);
+            primaryStage.setScene(scene);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -132,9 +136,9 @@ public class GameplayController {
 
     private void loadGameSceneData() throws IOException {
         //loads GameScene objects from json file
-        String json = new String(Files.readAllBytes(Paths.get("src/app/gameScenes.json")), StandardCharsets.UTF_8);
+        String json = new String(Files.readAllBytes(Paths.get("src/app/data/gameScenes.json")), StandardCharsets.UTF_8);
         gameScene = new Gson().fromJson(json, GameScene[].class);
-        System.out.println("GameScenes loaded.");
+        System.out.printf("GameScenes loaded.%n%n");
     }
 
     private void loadScene(int sceneNo) {
@@ -147,9 +151,9 @@ public class GameplayController {
         //display proper background image
         String currentSceneImagePath = gameScene[currentSceneNo].getImagePath(); //getting background image path if scene has one
         if (currentSceneImagePath.isEmpty()) {
-            currentSceneImagePath = "app/images/desert1.png";//default image path
+            currentSceneImagePath = "app/resources/images/desert1.png";//default image path
         }
-        System.out.println("Loading image: " + currentSceneImagePath);
+        System.out.printf("Loading image: %s%n", currentSceneImagePath);
         BackgroundSize backgroundSize = new BackgroundSize(900, 700,
                 true, true, true, true);
         BackgroundImage image = new BackgroundImage(new Image(currentSceneImagePath),  //setting background image

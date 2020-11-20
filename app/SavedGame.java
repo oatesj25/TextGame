@@ -18,7 +18,7 @@ public class SavedGame {
         String formattedDateTime = currentTime.format(formatter);
         this.dateSaved = formattedDateTime;
 
-        System.out.println("new SavedGame object created.");
+        System.out.printf("new SavedGame object created.%n%n");
     }
 
     public SavedGame(String name, int sceneNo, String dateSaved) {
@@ -26,7 +26,7 @@ public class SavedGame {
         this.sceneNo = sceneNo;
         this.dateSaved = dateSaved;
 
-        System.out.println("new SavedGame object created.");
+        System.out.printf("new SavedGame object created.%n%n");
     }
 
     public String getName() {

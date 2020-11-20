@@ -6,12 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import java.io.IOException;
 
 public class LoadGameMenuController {
@@ -35,14 +36,14 @@ public class LoadGameMenuController {
     }
 
     @FXML void loadMenuBackButtonClick(ActionEvent event) throws IOException {
-        loadMenuLayout();
+        loadLayout("resources/title_screen_layout.fxml");
     }
     @FXML void loadGameButtonClick(ActionEvent event) throws IOException {
         if (savedGamesTableView.getSelectionModel().isEmpty()) {
             loadGameButton.setText("Please select a game to load");
         } else {
             loadUserSelectedGame();
-            loadGameplayLayout();
+            loadLayout("resources/gameplay_layout.fxml");
         }
     }
 
@@ -56,14 +57,11 @@ public class LoadGameMenuController {
         loadGameReaderWriter.updateSessionToLoad(currentUserGame);
     }
 
-    private void loadGameplayLayout() throws IOException {
-        Parent parent = FXMLLoader.load(getClass().getResource("gameplay_layout.fxml"));
-        root.getChildren().setAll(parent);
-    }
-
-    private void loadMenuLayout() throws IOException {
-        Pane titleScreenParent = FXMLLoader.load(getClass().getResource("title_screen_layout.fxml"));
-        root.getChildren().setAll(titleScreenParent);
+    public void loadLayout(String layoutFile) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource(layoutFile));
+        Stage primaryStage = (Stage) root.getScene().getWindow();
+        Scene scene = new Scene(parent);
+        primaryStage.setScene(scene);
     }
 
     private void updateObservableSavedGames() throws IOException {

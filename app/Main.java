@@ -9,10 +9,10 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("title_screen_layout.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("resources/title_screen_layout.fxml"));
         primaryStage.setTitle("Saharan Delirium");
         Scene scene = new Scene(root, 800, 600);
-        scene.getStylesheets().add("app/styles.css");
+        scene.getStylesheets().add("app/resources/styles.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

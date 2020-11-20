@@ -9,7 +9,6 @@ import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 
 public class LoadGameReaderWriter {
 
@@ -18,7 +17,7 @@ public class LoadGameReaderWriter {
     public SavedGame loadGameSession() throws IOException {
         //reading saved games from json file
         Type typeToken = new TypeToken<SavedGame>(){}.getType();
-        String json = new String(Files.readAllBytes(Paths.get("src/app/gameSessionToLoad.json")), StandardCharsets.UTF_8);
+        String json = new String(Files.readAllBytes(Paths.get("src/app/data/gameSessionToLoad.json")), StandardCharsets.UTF_8);
         sessionToLoad = new Gson().fromJson(json, typeToken);
         return sessionToLoad;
     }
@@ -27,7 +26,7 @@ public class LoadGameReaderWriter {
         //writing to json file. saves user progress.
         Gson gson = new Gson();
         String json = gson.toJson(sg);
-        try(FileWriter fileWriter = new FileWriter("src/app/gameSessionToLoad.json")) {
+        try(FileWriter fileWriter = new FileWriter("src/app/data/gameSessionToLoad.json")) {
             fileWriter.write(json);
             fileWriter.flush();
         } catch (IOException e) {

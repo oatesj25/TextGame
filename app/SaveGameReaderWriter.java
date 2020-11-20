@@ -23,7 +23,7 @@ public class SaveGameReaderWriter {
     public List<SavedGame> loadSavedGamesList() throws IOException {
         //reading saved games from json file
         Type typeToken = new TypeToken<ArrayList<SavedGame>>(){}.getType();
-        String json = new String(Files.readAllBytes(Paths.get("src/app/savedGames.json")), StandardCharsets.UTF_8);
+        String json = new String(Files.readAllBytes(Paths.get("src/app/data/savedGames.json")), StandardCharsets.UTF_8);
         savedGamesList = new Gson().fromJson(json, typeToken);
         return savedGamesList;
     }
@@ -32,7 +32,7 @@ public class SaveGameReaderWriter {
         //writing to json file. saves user progress.
         Gson gson = new Gson();
         String json = gson.toJson(savedGameList);
-        try(FileWriter fileWriter = new FileWriter("src/app/savedGames.json")) {
+        try(FileWriter fileWriter = new FileWriter("src/app/data/savedGames.json")) {
             fileWriter.write(json);
             fileWriter.flush();
         } catch (IOException e) {
