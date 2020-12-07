@@ -18,7 +18,7 @@
     "AJumpsTo": 3,
     "BJumpsTo": 4,
     "CJumpsTo": 5,
-    "imagePath": "app/resources/images/desert1.png"
+    "imagePath": "app/resources/images/brightSun.png"
   },
   {
     "message": "Well, you better figure it out. You\u0027re in terrible shape and need to do something soon. I\u0027ll ask again. Where are you?",
@@ -28,7 +28,7 @@
     "AJumpsTo": 3,
     "BJumpsTo": 4,
     "CJumpsTo": 5,
-    "imagePath": "app/resources/images/desert1.png"
+    "imagePath": "app/resources/images/desert5.png"
   },
   {
     "message": "Correct! Now, within this expanse of nothing-but-sand, how are you going to survive? You can\u0027t see anything within a five-mile radius. Perhaps you\u0027re not looking hard enough?",
@@ -58,7 +58,7 @@
     "AJumpsTo": 19,
     "BJumpsTo": 8,
     "CJumpsTo": 5,
-    "imagePath": "app/resources/images/palmTrees.png"
+    "imagePath": "app/resources/images/mirage.png"
   },
   {
     "message": "You dig and dig and dig until the skin on your hands is burning from the scorching sand. You nearly give up, but your hand catches something by accident. It\u0027s a pair of sandals! Well... sort of. There are two mismatched sandals. You assume one of them is yours, but who the other belongs to is a mystery you\u0027ll have to solve. After acquiring footwear, what will you do next?",
@@ -108,7 +108,7 @@
     "AJumpsTo": 16,
     "BJumpsTo": 17,
     "CJumpsTo": 18,
-    "imagePath": ""
+    "imagePath": "app/resources/images/feast.png"
   },
   {
     "message": "Yes, you do. They\u0027re having a feast! The whole village! You know what that means, right? You finally get to eat!",
@@ -118,7 +118,7 @@
     "AJumpsTo": 16,
     "BJumpsTo": 17,
     "CJumpsTo": 18,
-    "imagePath": ""
+    "imagePath": "app/resources/images/feast2.png"
   },
   {
     "message": "The traveller spots you approaching them. They slow to a halt to ask you what you need. They seem inconvenienced, but clearly not enough to just ignore you.",
@@ -138,7 +138,7 @@
     "AJumpsTo": 19,
     "BJumpsTo": 22,
     "CJumpsTo": 23,
-    "imagePath": "app/resources/images/camel2.png"
+    "imagePath": "app/resources/images/desert5.png"
   },
   {
     "message": "The traveller doesn\u0027t spot you. You have managed to successfully avoid them. But... now what? They may have been your only chance of survival.",
@@ -148,7 +148,7 @@
     "AJumpsTo": 19,
     "BJumpsTo": 22,
     "CJumpsTo": 23,
-    "imagePath": "app/resources/images/desert2.png"
+    "imagePath": "app/resources/images/desert5.png"
   },
   {
     "message": "You bite into an unfamiliar-tasting chunk of meat. What is this? It\u0027s not bad, but... it\u0027s unlike anything you\u0027ve ever had before. You should probably ask someone about this, right?",
@@ -158,7 +158,7 @@
     "AJumpsTo": 18,
     "BJumpsTo": 24,
     "CJumpsTo": 25,
-    "imagePath": ""
+    "imagePath": "app/resources/images/meat.png"
   },
   {
     "message": "You inspect the food, looking into its small details and smelling its fresh, protein-packed scent simultaneously. It looks and smells like a normal piece of meat. What should you do?",
@@ -168,7 +168,7 @@
     "AJumpsTo": 16,
     "BJumpsTo": 18,
     "CJumpsTo": 25,
-    "imagePath": ""
+    "imagePath": "app/resources/images/meat.png"
   },
   {
     "message": "Your eyes wander around the open village area in search of a villager.You find someone leaning against a building to the left of you: an older man, bald, with lengthy facial hair, perhaps to compensate.He is relatively expressionless with an indifferent demeanor. You approach him and ask: ",
@@ -178,7 +178,7 @@
     "AJumpsTo": 26,
     "BJumpsTo": 27,
     "CJumpsTo": 16,
-    "imagePath": ""
+    "imagePath": "app/resources/images/oldMan2.png"
   },
   {
     "message": "You make it nearly halfway back to where you started from before you collapse due to heat exhaustion, dehydration, and likely other factors too. The hot sand feels comforting as you gradually lose your vision. After some time, all goes dark. Game over.",
@@ -188,7 +188,7 @@
     "AJumpsTo": 1,
     "BJumpsTo": 1,
     "CJumpsTo": 1,
-    "imagePath": "app/resources/images/darkness1.png"
+    "imagePath": "app/resources/images/darkness2.png"
   },
   {
     "message": "The traveller keeps their eyes on you as they reach for their water. They slowly move their hand toward you to give you the water, albeit with a stern gaze piercing through you. \"Here. Drink,\" they command.",
@@ -198,13 +198,13 @@
     "AJumpsTo": 28,
     "BJumpsTo": 21,
     "CJumpsTo": 19,
-    "imagePath": "app/resources/images/camel2.png"
+    "imagePath": "app/resources/images/manDrawingWater.png"
   },
   {
     "message": "He hesitates for a second, then abruptly responds, \"I can take you where I\u0027m headed. Just be aware that if you try anything, you\u0027re dead.\"",
     "choiceA": "\"Understood.\" [Go with the traveller.]",
     "choiceB": "\"Understood.\" [Go with the traveller, but attempt to hijack their camel and supplies.]",
-    "choiceC": "On second thought… [Refuse the offer and try to find a way on your own.]",
+    "choiceC": "On second thoughtï¿½ [Refuse the offer and try to find a way on your own.]",
     "AJumpsTo": 29,
     "BJumpsTo": 30,
     "CJumpsTo": 31,
@@ -218,7 +218,7 @@
     "AJumpsTo": 19,
     "BJumpsTo": 22,
     "CJumpsTo": 23,
-    "imagePath": "app/resources/images/desert1.png"
+    "imagePath": "app/resources/images/desert6.png"
   },
   {
     "message": "You eventually stumble upon a moderate, orderly village. This place feels almost familiar, but you can\u0027t quite put your finger on why.",
@@ -228,7 +228,7 @@
     "AJumpsTo": 32,
     "BJumpsTo": 33,
     "CJumpsTo": 34,
-    "imagePath": ""
+    "imagePath": "app/resources/images/desertVillage.png"
   },
   {
     "message": "As you chew and swallow bite after bite, it is at first quite satisfying... until you come to the sudden suspicion that this irregular meat is human meat. Convulsions begin to course throughout your body. Your fervent heartbeat has sped up rapidly. You collapse to the ground. Game over.",
@@ -248,7 +248,7 @@
     "AJumpsTo": 24,
     "BJumpsTo": 24,
     "CJumpsTo": 18,
-    "imagePath": ""
+    "imagePath": "app/resources/images/meat2.png"
   },
   {
     "message": "The old man takes a second to look you up and down before he responds, \"It\u0027s delicious meat, what does it look like?\"",
@@ -258,7 +258,7 @@
     "AJumpsTo": 36,
     "BJumpsTo": 37,
     "CJumpsTo": 24,
-    "imagePath": ""
+    "imagePath": "app/resources/images/oldMan2.png"
   },
   {
     "message": "The old man takes a second to look you up and down before he responds, \"It\u0027s simply some delicious meat, what makes you think it\u0027s unsafe?\"",
@@ -268,7 +268,7 @@
     "AJumpsTo": 37,
     "BJumpsTo": 24,
     "CJumpsTo": 38,
-    "imagePath": ""
+    "imagePath": "app/resources/images/oldMan2.png"
   }, 
   {
   	"message": "He maintains that stern glare. He replies, \"I\u0027m not here to converse with strangers. I must be leaving.\"",
@@ -278,7 +278,7 @@
     "AJumpsTo": 21,
     "BJumpsTo": 14,
     "CJumpsTo": 19,
-    "imagePath": ""
+    "imagePath": "app/resources/images/oldMan2.png"
     },
     {
   	"message": "You\u0027ve been travelling for ages; so long that the sun is setting. You happen upon a small village. As you enter, the traveller instructs you to dismount and you do so. Wanna know the most exciting part about this village, though?",
@@ -288,7 +288,7 @@
     "AJumpsTo": 11,
     "BJumpsTo": 11,
     "CJumpsTo": 12,
-    "imagePath": "app/resources/images/darkness2.png"
+    "imagePath": "app/resources/images/desertVillage.png"
     },
     {
   	"message": "The traveller is quick to realise what you\u0027re attempting. They swiftly uncover a knife that was hidden under their clothing. They hastily plunge the knife into your chest, causing you to fall off the mount. You\u0027re left to die in the vastness of the sands. Game over.",
@@ -318,7 +318,7 @@
     "AJumpsTo": 39,
     "BJumpsTo": 40,
     "CJumpsTo": 34,
-    "imagePath": ""
+    "imagePath": "app/resources/images/desertPrison.png"
     },
     {
   	"message": "You\u0027ve got nothing. Use your feet to navigate the village, then you\u0027ll probably figure it out.",
@@ -328,7 +328,7 @@
     "AJumpsTo": 32,
     "BJumpsTo": 34,
     "CJumpsTo": 41,
-    "imagePath": ""
+    "imagePath": "app/resources/images/desertVillage2.png"
     },
     {
   	"message": "There are vendors everywhere of many kinds, but especially food! Just in your line of sight, there are three: one of them seems to be really proud of his handmade kelewele (a simple fried snack food), another is flaunting his tasty bessara (typically a breakfast food), and the last one would love for you to try his suya (a barbecued snack). Take your pick.",
@@ -338,7 +338,7 @@
     "AJumpsTo": 42,
     "BJumpsTo": 42,
     "CJumpsTo": 42,
-    "imagePath": ""
+    "imagePath": "app/resources/images/desertVillage2.png"
     },
     {
   	"message": "Your eyes wander around the open village area in search of a villager. You find someone leaning against a building to the left of you: an older man, bald, with lengthy facial hair, perhaps to compensate. He is relatively expressionless with an indifferent demeanor. You approach him and ask:",
@@ -348,7 +348,7 @@
     "AJumpsTo": 26,
     "BJumpsTo": 27,
     "CJumpsTo": 24,
-    "imagePath": ""
+    "imagePath": "app/resources/images/oldMan2.png"
     },
     {
   	"message": "He looks a bit angered by your question. He disgruntledly replies, \"It\u0027s simply some delicious meat, what makes you think it\u0027s unsafe?\"",
@@ -358,7 +358,7 @@
     "AJumpsTo": 37,
     "BJumpsTo": 24,
     "CJumpsTo": 38,
-    "imagePath": ""
+    "imagePath": "app/resources/images/oldMan2.png"
     },
     {
   	"message": "For some reason, he clearly dislikes your question. \"Just eat it. It\u0027s good.\"",
@@ -368,7 +368,7 @@
     "AJumpsTo": 24,
     "BJumpsTo": 24,
     "CJumpsTo": 38,
-    "imagePath": ""
+    "imagePath": "app/resources/images/meat.png"
     },
     {
   	"message": "His eyes dart to yours intimidatingly. His eyebrows close downwards, creating a V shape. His chest puffs out. He\u0027s looking to fight. As if it\u0027s an intentional reaffirmation, he yells, \"Do you want to fight? I\u0027ll knock you out right now!\"",
@@ -378,7 +378,7 @@
     "AJumpsTo": 43,
     "BJumpsTo": 44,
     "CJumpsTo": 45,
-    "imagePath": ""
+    "imagePath": "app/resources/images/oldMan2.png"
     },
     {
   	"message": "You trudge into the bleak and bland building to be greeted by a guard of sorts. His face progressively went from stoic to shocked the closer you got to him. You don\u0027t know why, but before you know *anything*, he\u0027s pulled out a handgun and instructed you to, \"Put your hands where I can see them!\" You don\u0027t know what this is about, but you comply so as not to get yourself killed.",
@@ -388,27 +388,27 @@
     "AJumpsTo": 46,
     "BJumpsTo": 46,
     "CJumpsTo": 46,
-    "imagePath": ""
+    "imagePath": "app/resources/images/prisonGuard.png"
     },
     {
   	"message": "You wander around for a bit longer attempting to find something or some place of note. You end up walking upon a mosque, albeit quite a small one. There are a few people inside.",
     "choiceA": "[Enter the mosque.]",
-    "choiceB": "I think I’ll pass. [Go back to the prison-looking building.]",
-    "choiceC": "I don’t know why I’m looking at a mosque, I’m starving! [Attempt to find something to eat.]",
+    "choiceB": "I think I\u0027ll pass. [Go back to the prison-looking building.]",
+    "choiceC": "I don\u0027t know why I\u0027m looking at a mosque, I\u0027m starving! [Attempt to find something to eat.]",
     "AJumpsTo": 49,
     "BJumpsTo": 50,
     "CJumpsTo": 34,
-    "imagePath": ""
+    "imagePath": "app/resources/images/mosque.png"
     },
     {
-  	"message": "There’s nothing up there, man. It’s empty. Move forward.",
+  	"message": "There\u0027s nothing up there, man. It\u0027s empty. Move forward.",
     "choiceA": "[Explore the village.]",
     "choiceB": "[Attempt to find something to eat.]",
     "choiceC": "No, really... I can remember. I can remember!",
     "AJumpsTo": 32,
     "BJumpsTo": 34,
     "CJumpsTo": 41,
-    "imagePath": ""
+    "imagePath": "app/resources/images/desertVillage2.png"
     },
     {
   	"message": "As you approach the vendor, they appear to recognise you based on how their eyes move. Out of nowhere, they brandish a knife and start yelling, \"Guards! Guards!\" You become distressed and confused, but you freeze up, unable to move. Prison guards arrive in mere minutes and arrest you without hesitation.",
@@ -418,7 +418,7 @@
     "AJumpsTo": 52,
     "BJumpsTo": 52,
     "CJumpsTo": 52,
-    "imagePath": ""
+    "imagePath": "app/resources/images/prisonGuard.png"
     },
     {
   	"message": "Regardless of what you said, he seems to now be in a blind rage. He throws his fists at your face too fast for you to defend. You immediately feel dizzy, and with one third punch to the side of your face, your body hits the hard ground. For a few seconds you have a horrible headache, but you pass out almost instantly after.",
@@ -428,7 +428,7 @@
     "AJumpsTo": 53,
     "BJumpsTo": 53,
     "CJumpsTo": 53,
-    "imagePath": ""
+    "imagePath": "app/resources/images/darkness2.png"
     },
     {
   	"message": "Wrong decision. He catches your hand effortlessly and twists your wrist in such a way that invokes great amounts of pain. He then throws his fists at your face too fast for you to defend. You immediately feel dizzy, and with one third punch to the side of your face, your body hits the hard ground. For a few seconds you have a horrible headache, but you pass out almost instantly after.",
@@ -438,7 +438,7 @@
     "AJumpsTo": 53,
     "BJumpsTo": 53,
     "CJumpsTo": 53,
-    "imagePath": ""
+    "imagePath": "app/resources/images/darkness2.png"
     },
     {
   	"message": "You calling his bluff only angered him further, sending him into a frenzied, blind rage.  He throws his fists at your face too fast for you to defend. You immediately feel dizzy, and with one third punch to the side of your face, your body hits the hard ground. For a few seconds you have a horrible headache, but you pass out almost instantly after.",
@@ -448,27 +448,27 @@
     "AJumpsTo": 53,
     "BJumpsTo": 53,
     "CJumpsTo": 53,
-    "imagePath": ""
+    "imagePath": "app/resources/images/darkness2.png"
     },
     {
-  	"message": "The guard inches forward, getting closer and closer without letting his eye off you. He reaches you and grabs each of your arms, one by one, putting them behind your back. He pulls some rope out of one of the pockets of his uniform and ties your hands together with it. \"You’re coming with me,\" he says, poker-faced.",
+  	"message": "The guard inches forward, getting closer and closer without letting his eye off you. He reaches you and grabs each of your arms, one by one, putting them behind your back. He pulls some rope out of one of the pockets of his uniform and ties your hands together with it. \"You\u0027re coming with me,\" he says, poker-faced.",
     "choiceA": "(Continue.)",
     "choiceB": "(Continue.)",
     "choiceC": "(Continue.)",
     "AJumpsTo": 47,
     "BJumpsTo": 47,
     "CJumpsTo": 47,
-    "imagePath": ""
+    "imagePath": "app/resources/images/prisonGuard2.png"
     },
     {
-  	"message": "He begins to walk you over to your own personal cell, and during that, you see bounty posters with your name on them sprawled all over the walls. He pushes you into the cell and locks the door behind you. \"We’re not letting you get away again,\" he shouts, menacingly.",
+  	"message": "He begins to walk you over to your own personal cell, and during that, you see bounty posters with your name on them sprawled all over the walls. He pushes you into the cell and locks the door behind you. \"We\u0027re not letting you get away again,\" he shouts, menacingly.",
     "choiceA": "[Resign to the fate of your mistakes.]",
     "choiceB": "[Resign to the fate of your mistakes.]",
     "choiceC": "[Resign to the fate of your mistakes.]",
     "AJumpsTo": 48,
     "BJumpsTo": 48,
     "CJumpsTo": 48,
-    "imagePath": ""
+    "imagePath": "app/resources/images/prisonCell.png"
     },
     {
   	"message": "THE END.",
@@ -478,9 +478,9 @@
     "AJumpsTo": 1,
     "BJumpsTo": 1,
     "CJumpsTo": 1,
-    "imagePath": ""
+    "imagePath": "app/resources/images/darkness2.png"
     },
-    {
+     {
   	"message": "Scene currently under construction",
     "choiceA": "Go to menu",
     "choiceB": "",
@@ -510,4 +510,5 @@
     "CJumpsTo": 51,
     "imagePath": ""
     }
+    
 ]
